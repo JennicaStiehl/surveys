@@ -1,0 +1,14 @@
+# specify which database and adapter to use for which environment
+
+development:
+  adapter: postgresql
+  database: surveys-development
+
+test:
+  adapter: postgresql
+  database: surveys-test
+
+production:
+  adapter: postgresql
+  database: surveys-production
+  url: <%= ENV['DATABASE_URL'] %>
