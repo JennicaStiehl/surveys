@@ -21,7 +21,9 @@ RSpec: https://gist.github.com/Jamedjo/5792332
 http://recipes.sinatrarb.com/p/testing/rspec?
 Readme Template: https://github.com/zalando/zalando-howto-open-source/blob/master/READMEtemplate.md
 Setup: https://gist.github.com/jtallant/fd66db19e078809dfe94401a0fc814d2
+https://stackoverflow.com/questions/20638136/undefined-method-desc-for-sinatraapplicationclass
 ```
+
 
 # Getting Started/Requirements/Prerequisites/Dependencies
 ```
