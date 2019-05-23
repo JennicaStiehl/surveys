@@ -7,7 +7,7 @@ Bundler.require(:default, :test)
 require File.expand_path('../../config/environment.rb', __FILE__)
 require 'capybara/dsl'
 
-Capybara.app = FriendsApp
+Capybara.app = SurveysApp
 Capybara.save_path = 'tmp/capybara'
 
 DatabaseCleaner.strategy = :truncation
@@ -28,4 +28,14 @@ RSpec.configure do |c|
   end
 
   c.include RSpecMixin
+end
+# config.filter_run_when_matching :focus
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+
+    # Keep as many of these lines as are necessary:
+    with.library :active_record
+    with.library :active_model
+  end
 end
