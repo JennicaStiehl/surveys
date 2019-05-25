@@ -6,6 +6,7 @@ class ResponseSerializer
                   :student_id,
                   :text_answer,
                   :choice_id,
-                  :answer_type
-                  # :question
+                  :answer_type,
+                  :question,
+                  :choice
 end
