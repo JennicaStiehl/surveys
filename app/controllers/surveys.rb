@@ -18,7 +18,6 @@ class SurveysApp < Sinatra::Base
 
   get '/api/v1/responses' do
     responses = Response.get_responses
-    binding.pry
     responses.to_json
   end
 

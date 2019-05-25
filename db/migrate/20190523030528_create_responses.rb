@@ -7,7 +7,7 @@ class CreateResponses < ActiveRecord::Migration[5.2]
       t.string                    :answer_type
       t.string                    :text_answer
       t.timestamps
-      t.references            :question
+      t.references            :question, index: true
     end
   end
 end
