@@ -31,6 +31,9 @@ run the following commands:
 bundle install
 bundle exec figaro install
 rspec - init
+bundle exec rake db:{create,migrate,seed}
+Created database 'surveys-development'
+Created database 'surveys-test'
 
 Running it
 
@@ -57,3 +60,13 @@ Known bugs (shortlist)
 Email address
 ```
 # License
+### My notes:
+
+```surveys-development=#
+
+select * from responses inner join choices on responses.choice_id = choices.id inner join questions on questions.id = choices.question_id;
+
+select * from responses inner join choices on responses.choice_id = choices.id;
+
+select * from categories inner join questions on categories.id = questions.category_id;
+```

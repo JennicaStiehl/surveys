@@ -2,6 +2,7 @@ class Question < ActiveRecord::Base
   belongs_to :category
   has_many :choices
   has_many :responses, :through => :choice
+  validates_presence_of :question
 
   def self.get_q_and_a(ids)
     left_outer_join(:choices)

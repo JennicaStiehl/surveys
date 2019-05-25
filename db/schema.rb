@@ -39,14 +39,15 @@ ActiveRecord::Schema.define(version: 2019_05_23_030528) do
   end
 
   create_table "responses", force: :cascade do |t|
-    t.bigint "question_id"
-    t.bigint "answer_id"
-    t.integer "student_id"
-    t.integer "class_id"
-    t.integer "present"
+    t.bigint "choice_id"
+    t.string "student_id"
+    t.integer "course_id"
+    t.string "answer_type"
+    t.string "text_answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["answer_id"], name: "index_responses_on_answer_id"
+    t.bigint "question_id"
+    t.index ["choice_id"], name: "index_responses_on_choice_id"
     t.index ["question_id"], name: "index_responses_on_question_id"
   end
 

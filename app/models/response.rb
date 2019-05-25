@@ -1,7 +1,9 @@
 class Response < ActiveRecord::Base
   belongs_to :choice
   delegate :question, :to => :choice
-
+  validates_presence_of :question_id
+  validates_presence_of :student_id
+  
   def self.get_responses
     joins(:questions, :choices)
     .select('choices.*')
