@@ -3,7 +3,9 @@ require 'spec_helper'
 RSpec.describe Question, type: :model do
   describe 'validations' do
     it { should have_many :choices }
-    it { should belong_to :categories }
+    # it { should have_many :responses, :through => :choice}
+    it { should belong_to :category }
+    it { should validate_presence_of :question }
   end
 
 end

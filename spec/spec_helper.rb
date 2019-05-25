@@ -14,7 +14,7 @@ DatabaseCleaner.strategy = :truncation
 
 module RSpecMixin
   include Rack::Test::Methods
-  def app() FriendsApp end
+  def app() SurveysApp end
 end
 
 RSpec.configure do |c|
