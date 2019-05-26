@@ -6,7 +6,8 @@ class Response < ActiveRecord::Base
   validates_presence_of :student_id
 
   def self.get_responses#(category)
-    Response.joins(choice: :question)
+    joins(choice: :question)
+    .select('responses.*, choices.*, questions.*').all
     # .where('questions.category_id=#{category.id}')
   end
 end

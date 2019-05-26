@@ -11,9 +11,11 @@ class Question < ActiveRecord::Base
     .where("questions.id in (#{ids})")
   end
 
-  def get_choices(id)
+  def self.get_choices(id)
     joins(:responses)
     .select('responses.*, question.id')
   end
+
+
 
 end
