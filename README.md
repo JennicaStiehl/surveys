@@ -14,36 +14,32 @@ ActiveRecord
 Postgresql
 ```
 
-# Resources
-```
-Project Guidelines: http://backend.turing.io/module3/projects/terrificus
-RSpec: https://gist.github.com/Jamedjo/5792332
-http://recipes.sinatrarb.com/p/testing/rspec?
-Readme Template: https://github.com/zalando/zalando-howto-open-source/blob/master/READMEtemplate.md
-Setup: https://gist.github.com/jtallant/fd66db19e078809dfe94401a0fc814d2
-https://stackoverflow.com/questions/20638136/undefined-method-desc-for-sinatraapplicationclass
-```
-
-
 # Getting Started/Requirements/Prerequisites/Dependencies
 ```
 run the following commands:
+
 bundle install
 bundle exec figaro install
-rspec - init
 bundle exec rake db:{create,migrate,seed}
-Created database 'surveys-development'
-Created database 'surveys-test'
+RACK_ENV=test rake db:migrate
 
-Running it
+## Local Host
+in your CLI:
+```bundle exec shotgun```
+in your browser:
+```http://localhost:9393```
 
-Versioning: Services, APIs, Systems
-Common Error Messages/related details
-Tests
+## API Endpoints
+```
+
+```
+## Versioning
 ```
 
 # Contributing
 ```
+## Github: https://github.com/JennicaStiehl/surveys
+
 Contributor Guidelines
 Code Style/Requirements
 Format for commit messages
@@ -60,8 +56,17 @@ Known bugs (shortlist)
 Email address
 ```
 # License
+# Resources
+```
+Project Guidelines: http://backend.turing.io/module3/projects/terrificus
+RSpec: https://gist.github.com/Jamedjo/5792332
+http://recipes.sinatrarb.com/p/testing/rspec?
+Readme Template: https://github.com/zalando/zalando-howto-open-source/blob/master/READMEtemplate.md
+Setup: https://gist.github.com/jtallant/fd66db19e078809dfe94401a0fc814d2
+https://stackoverflow.com/questions/20638136/undefined-method-desc-for-sinatraapplicationclass
+```
 ### My notes:
-
+databases: 'surveys-development', 'surveys-test'
 ```surveys-development=#
 
 select * from responses inner join choices on responses.choice_id = choices.id inner join questions on questions.id = choices.question_id;

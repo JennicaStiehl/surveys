@@ -27,16 +27,17 @@ describe "API response calls" do
   it 'can get responses with free text answers' do
     c1 = Category.create(category:"daily")
     q1 = c1.questions.create(question: "Math Test", category_id: c1.id, created_at: "2019-05-23 13:31:38 UTC", updated_at: "2019-05-23 13:31:38 UTC")
-    a1 = q1.answers.create(answer:"89.3")
-    a2 = q1.answers.create(answer:"no")
-    r1 = Response.create(question_id: q1.id, answer_type: "text", answer_id: a1.id, student_id: 1, course_id: 2)
-    r2 = Response.create(question_id: q1.id, answer_type: "text", answer_id: a2.id, student_id: 2, course_id: 2)
+    r1 = Response.create(question_id: q1.id, answer_type: "text", student_id: 1, course_id: 2)
+    r2 = Response.create(question_id: q1.id, answer_type: "text", student_id: 2, course_id: 2)
+    a1 = q1.answers.create(answer:"89.3", response_id: r1.id)
+    a2 = q1.answers.create(answer:"34", response_id: r2.id)
 
-    get '/api/v1/responses'
+    get '/api/v1/answers'
 
     expect(last_response).to be_successful
     parsed = JSON.parse(last_response.body, symbolize_names: true)
-binding.pry
+    expect(parsed[:data][0][:attributes][:answer]).to eq(a1.answer)
+    expect(parsed[:data][1][:attributes][:answer]).to eq(a2.answer)
   end
 
   it 'can create a response' do

@@ -4,7 +4,6 @@ class CreateResponses < ActiveRecord::Migration[5.2]
       t.references            :choice
       t.string                    :student_id
       t.integer                  :course_id
-      t.integer                  :answer_id
       t.string                    :answer_type
       t.string                    :text_answer
       t.timestamps

@@ -17,7 +17,12 @@ class SurveysApp < Sinatra::Base
   end
 
   get '/api/v1/responses' do
-    responses = ResponseSerializer.new(Response.get_responses)
+    responses = ResponseSerializer.new(Response.choice_query)
+    responses.to_json
+  end
+
+  get '/api/v1/answers' do
+    responses = AnswerSerializer.new(Response.answer_query)
     responses.to_json
   end
 

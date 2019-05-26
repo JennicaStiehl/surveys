@@ -17,10 +17,12 @@ ActiveRecord::Schema.define(version: 2019_05_23_030528) do
 
   create_table "answers", force: :cascade do |t|
     t.bigint "question_id"
+    t.bigint "response_id"
     t.text "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["response_id"], name: "index_answers_on_response_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -50,7 +52,6 @@ ActiveRecord::Schema.define(version: 2019_05_23_030528) do
     t.bigint "choice_id"
     t.string "student_id"
     t.integer "course_id"
-    t.integer "answer_id"
     t.string "answer_type"
     t.string "text_answer"
     t.datetime "created_at", null: false

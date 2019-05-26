@@ -8,6 +8,7 @@ gem 'sinatra-contrib'
 gem 'rake'
 gem 'fast_jsonapi'
 gem 'active_record_union'
+gem 'figaro'
 
 group :development, :test do
   gem 'capybara', '~> 3.0.3'
