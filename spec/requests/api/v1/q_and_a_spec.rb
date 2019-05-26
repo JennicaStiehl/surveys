@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe "API calls" do
+describe "API q and a calls" do
   it 'q_and_a call has questions and choices' do
     c1 = Category.create(category:"daily")
     q1 = c1.questions.create(question: "Did you eat breakfast?", created_at: "2019-05-23 13:31:38 UTC", updated_at: "2019-05-23 13:31:38 UTC")

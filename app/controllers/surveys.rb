@@ -12,7 +12,7 @@ class SurveysApp < Sinatra::Base
   end
 
   get '/api/v1/questions' do
-    questions = Question.all
+    questions = QuestionSerializer.new(Category.get_questions)
     questions.to_json
   end
 
