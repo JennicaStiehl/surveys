@@ -19,14 +19,10 @@ class SurveysApp < Sinatra::Base
   get '/api/v1/responses' do
     responses = ResponseSerializer.new(Response.get_responses)
     responses.to_json
-    #render json:
-    # responses = Response.get_responses
-    # responses.to_json
   end
 
   get '/api/v1/q_and_a' do
-    question_id = params[:question_id]
-    q_and_a = Question.get_q_and_a(question_id)
+    q_and_a = QandASerializer.new(Question.get_q_and_a(params[:question_id]))
     q_and_a.to_json
   end
 
