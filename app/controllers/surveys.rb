@@ -31,20 +31,12 @@ class SurveysApp < Sinatra::Base
   end
 
   post '/api/v1/responses' do
-    response_data = params
-    # get info from params & headers
-    response_data.map do |response|
-      response = Response.new(response)
-      if response.save
-        {message: "data recorded in the survey database"}
-      else
-        {message: "failure to load data into survey database"}
-      end
+    incoming_response = Response.new(params[:data])
+    if incoming_response.save
+      {message: "response successfully created"}.to_json
+    else
+      {message: "failed to create a response"}.to_json
     end
-    # create a response record
-    message.to_json
-    # error messaging
-    # post `/response?student_id=1&class_id=2` header: {responses:{1:"yes", 2:"4",5:"2",6:"green"}}
   end
 
 end
