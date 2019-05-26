@@ -2,12 +2,9 @@ class Response < ActiveRecord::Base
   belongs_to :choice
   has_many :answers
   delegate :question, :to => :choice, :allow_nil => true
-  # delegate :question, :to => :answer
 
   validates_presence_of :question_id
   validates_presence_of :student_id
-
-# scope :text, -> { where("answer_type = ?", "text") }
 
   # def self.get_responses#(category)
   #   self.choice_query.union(self.answer_query)
