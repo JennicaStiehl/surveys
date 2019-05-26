@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>Surveys App</title>
+  <link rel="stylesheet" href="/main.css" type="text/css" />
+
+</head>
+<body>
+  <nav>
+    <ul>
+      <li> <a href="/">Home</a> </li>
+    </ul>
+  </nav>
+<h1>API Documentation</h1>
+<h2>Endpoints</h2>
+<h3>get</h3>
+<ol>
+  <li>'/api/v1/questions' </li>
+    <ul><br>
+      <li>This endpoint provides the questions and possible choices for building out a survey form.</li>
+    </ul><br>
+    <li>'/api/v1/responses' </li>
+    <ul><br>
+      <li>This endpoint provides the responses from survey questions, including student ids, course ids, question ids.</li>
+    </ul><br>
+    <li>'/api/v1/answers' </li>
+    <ul><br>
+      <li>This endpoint provides the free text answers to survey questions from survey questions.</li>
+    </ul><br>
+    <li>'/api/v1/q_and_a' <br>
+      <ul><br>
+        <li>This endpoint provides the responses from survey questions and responses for the specified question ids.</li>
+        <li>required parameters: question_id(s) </li>
+      </ul><br>
+</ol>
+<h3>post</h3>
+<ol>
+    <li>'/api/v1/responses' </li>
+    <ul><br>
+      <li>This endpoint creates records in the surveys database using parameters that inclue: question ids, student ids, course ids, choice ids.</li>
+    </ul><br>
+</ol>
+
+</html>

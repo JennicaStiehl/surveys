@@ -11,6 +11,10 @@ class SurveysApp < Sinatra::Base
     erb :dashboard
   end
 
+  get '/documentation' do
+    erb :documentation
+  end
+
   get '/api/v1/questions' do
     questions = QuestionSerializer.new(Category.get_questions)
     questions.to_json
