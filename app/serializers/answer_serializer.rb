@@ -5,6 +5,6 @@ class AnswerSerializer
                   :question,
                   :course_id,
                   :student_id,
-                  :answer_type,
+                  :joins_table,
                   :answer
 end

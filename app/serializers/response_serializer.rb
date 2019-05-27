@@ -4,9 +4,9 @@ class ResponseSerializer
                   :question_id,
                   :course_id,
                   :student_id,
-                  :text_answer,
-                  :choice_id,
-                  :answer_type,
+                  :joins_id,
+                  :joins_table,
                   :question,
-                  :choice
+                  :choice,
+                  :correct
 end

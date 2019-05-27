@@ -6,24 +6,16 @@ class Response < ActiveRecord::Base
   validates_presence_of :question_id
   validates_presence_of :student_id
 
-  # def self.get_responses#(category)
-  #   self.choice_query.union(self.answer_query)
-  #   # gather_queries.inject(:union)
-  # end
-
   private
 
   def self.answer_query
-    find_by_sql("select * from responses inner join answers on responses.id = answers.response_id inner join questions on responses.question_id = questions.id where responses.answer_type = 'text'")
+    find_by_sql("select * from responses inner join answers on responses.joins_id = answers.id inner join questions on responses.question_id = questions.id where responses.joins_table = 'answer'")
   end
-    # joins(answer: :question)
-    # .select('responses.*, answers.*, questions.*')
-    # .where(answer_type: "text")
-
 
   def self.choice_query
-    left_outer_joins(choice: :question)
-    .select('responses.*, choices.id, choices.choice as answer, questions.*')
-    .where(answer_type: "id")
+    joins('inner join choices on responses.joins_id = choices.id inner join questions on responses.question_id = questions.id')
+    .select('responses.*, choices.*, questions.*')
+    .where(joins_table: 'choice')
+    # find_by_sql("select * from responses inner join choices on responses.joins_id = choices.id inner join questions on responses.question_id = questions.id where responses.joins_table = 'choice'")
   end
 end
