@@ -29,11 +29,13 @@ in your CLI:
 ```bundle exec shotgun```
 in your browser:
 ```http://localhost:9393```
+```https://aqueous-caverns-33840.herokuapp.com/```
 
 ## API Endpoints
 ```
 get '/api/v1/questions'
 get '/api/v1/responses'
+get '/api/v1/all_responses'
 get '/api/v1/answers'
 get '/api/v1/q_and_a'
 post '/api/v1/responses'
