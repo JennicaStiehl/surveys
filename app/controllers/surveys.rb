@@ -2,7 +2,6 @@ require_relative '../models/question.rb'
 require 'sinatra/base'
 require 'sinatra/activerecord'
 require 'sinatra/contrib'
-require 'pry'
 
 class SurveysApp < Sinatra::Base
   set :root, File.expand_path("..",__dir__)
