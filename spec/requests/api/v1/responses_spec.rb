@@ -19,7 +19,7 @@ describe "API response calls" do
     expect(parsed[:data][0][:attributes][:course_id]).to eq(2)
     expect(parsed[:data][0][:attributes][:text_answer]).to eq(nil)
     expect(parsed[:data][1][:attributes][:question_id]).to eq(1)
-    expect(parsed[:data][1][:attributes][:student_id]).to eq("2")
+    expect(parsed[:data][1][:attributes][:student_id]).to eq("1")
     expect(parsed[:data][1][:attributes][:course_id]).to eq(2)
     expect(parsed[:data][1][:attributes][:text_answer]).to eq(nil)
   end
@@ -59,7 +59,7 @@ describe "API response calls" do
     expect(parsed[:data][0][:attributes][:course_id]).to eq(2)
     expect(parsed[:data][0][:attributes][:text_answer]).to eq(nil)
     expect(parsed[:data][1][:attributes][:question_id]).to eq(1)
-    expect(parsed[:data][1][:attributes][:student_id]).to eq("2")
+    expect(parsed[:data][1][:attributes][:student_id]).to eq("1")
     expect(parsed[:data][1][:attributes][:course_id]).to eq(2)
     expect(parsed[:data][1][:attributes][:text_answer]).to eq(nil)
   end
