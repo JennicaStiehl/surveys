@@ -1,5 +1,5 @@
 require_relative '../models/question.rb'
-require 'sinatra/base' # note this has changed from just 'sinatra'
+require 'sinatra/base'
 require 'sinatra/activerecord'
 require 'sinatra/contrib'
 require 'pry'
@@ -30,17 +30,25 @@ class SurveysApp < Sinatra::Base
     responses.to_json
   end
 
+  get '/api/v1/all_responses' do
+    responses = ResponseSerializer.new(Response.all_responses)
+    responses.to_json
+  end
+
   get '/api/v1/q_and_a' do
     q_and_a = QandASerializer.new(Question.get_q_and_a(params[:question_id]))
     q_and_a.to_json
   end
 
   post '/api/v1/responses' do
-    incoming_response = Response.new(params[:data])
-    if incoming_response.save
-      {message: "response successfully created"}.to_json
-    else
-      {message: "failed to create a response"}.to_json
+    if Question.find_by(id: params[:data][:question_id].to_i)
+      incoming_response = Response.new(params[:data])
+      if incoming_response.save
+        {message: "response successfully created"}.to_json
+      else
+        {message: "failed to create a response"}.to_json
+      end
+    else {message: "invalid question_id"}.to_json
     end
   end
 

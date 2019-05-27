@@ -1,20 +1,21 @@
 # Project Name: Surveys
-# Description
+## Description
 ```
 Surveys is a stand alone Sinatra application built in the spirit of Service Oriented Architecture (SOA).
 ```
-# Goals
+## Goals
 ```
 Surveys is designed to be a small service able to integrate into several different projects. The original intent is for a larger Rails application that assists teachers with attendance, student success strategies tracking and research based predictive analytics to consume API data from surveys. Surveys has a table for questions, answers and question categories. It sends user Id, class ID and answer ID back to the main application, which in turn creates views for teachers in order to assist in education goals.
 ```
-# Core Technical Concepts/Inspiration
+## Core Technical Concepts/Inspiration
 ```
 Sinatra
 ActiveRecord
 Postgresql
+Fast JSON API
 ```
 
-# Getting Started/Requirements/Prerequisites/Dependencies
+## Getting Started/Requirements/Prerequisites/Dependencies
 ```
 run the following commands:
 
@@ -22,7 +23,7 @@ bundle install
 bundle exec figaro install
 bundle exec rake db:{create,migrate,seed}
 RACK_ENV=test rake db:migrate
-
+```
 ## Local Host
 in your CLI:
 ```bundle exec shotgun```
@@ -31,32 +32,33 @@ in your browser:
 
 ## API Endpoints
 ```
-
+get '/api/v1/questions'
+get '/api/v1/responses'
+get '/api/v1/answers'
+get '/api/v1/q_and_a'
+post '/api/v1/responses'
 ```
 ## Versioning
 ```
-
-# Contributing
+v1  5/27/2019
 ```
-## Github: https://github.com/JennicaStiehl/surveys
+## Contributing
+```
+Github: https://github.com/JennicaStiehl/surveys
 
 Contributor Guidelines
 Code Style/Requirements
 Format for commit messages
 Thank you (name contributors)
 ```
-# TODO
+## TODO
 ```
 Next steps
 Features planned
 Known bugs (shortlist)
 ```
-# Contact
-```
-Email address
-```
-# License
-# Resources
+
+## Resources
 ```
 Project Guidelines: http://backend.turing.io/module3/projects/terrificus
 RSpec: https://gist.github.com/Jamedjo/5792332

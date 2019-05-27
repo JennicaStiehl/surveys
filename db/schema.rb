@@ -15,16 +15,6 @@ ActiveRecord::Schema.define(version: 2019_05_23_030528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "answers", force: :cascade do |t|
-    t.bigint "question_id"
-    t.bigint "response_id"
-    t.text "answer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_answers_on_question_id"
-    t.index ["response_id"], name: "index_answers_on_response_id"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.text "category"
     t.datetime "created_at", null: false

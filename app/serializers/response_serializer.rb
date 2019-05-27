@@ -8,5 +8,6 @@ class ResponseSerializer
                   :choice_id,
                   :answer_type,
                   :question,
-                  :choice
+                  :choice,
+                  :correct
 end
