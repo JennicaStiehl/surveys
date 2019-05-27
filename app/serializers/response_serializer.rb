@@ -9,5 +9,7 @@ class ResponseSerializer
                   :answer_type,
                   :question,
                   :choice,
-                  :correct
+                  :correct,
+                  :updated_at,
+                  :created_at
 end

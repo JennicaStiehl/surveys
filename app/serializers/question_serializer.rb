@@ -2,7 +2,9 @@ class QuestionSerializer
 include FastJsonapi::ObjectSerializer
   attributes :id,
                   :category,
-                  :question
+                  :question,
+                  :updated_at,
+                  :created_at
 
 
 end

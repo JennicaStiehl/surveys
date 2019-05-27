@@ -4,5 +4,7 @@ attributes :id,
                 :choice_id,
                 :question,
                 :choice,
-                :correct
+                :correct,
+                :updated_at,
+                :created_at
 end
