@@ -10,7 +10,6 @@ describe "API q and a calls" do
     no_quest2 = question2.choices.create(choice:"more than usual", correct:nil)
     response1 = Response.create(question_id: question1.id, answer_type: "id", text_answer: nil, choice_id: yes, student_id: 1, course_id: 2)
     response2 = Response.create(question_id: question1.id, answer_type: "id", text_answer: nil, choice_id: yes, student_id: 2, course_id: 2)
-
     get '/api/v1/q_and_a?question_id=1,2'
 
     expect(last_response).to be_successful
