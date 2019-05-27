@@ -18,7 +18,7 @@ describe "API q and a calls" do
 
     expect(parsed[:data][0][:attributes][:question]).to eq("Did you eat breakfast?")
     expect(parsed[:data][2][:attributes][:question]).to eq("How much sleep did you get?")
-    expect(parsed[:data][2][:attributes][:choice]).to eq("usual")
-    expect(parsed[:data][3][:attributes][:choice]).to eq("more than usual")
+    expect(parsed[:data][2][:attributes][:choice]).to eq("more than usual")
+    expect(parsed[:data][3][:attributes][:choice]).to eq("usual")
   end
 end

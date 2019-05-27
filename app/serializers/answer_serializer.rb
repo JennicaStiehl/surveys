@@ -6,5 +6,5 @@ class AnswerSerializer
                   :course_id,
                   :student_id,
                   :answer_type,
-                  :answer
+                  :text_answer
 end
