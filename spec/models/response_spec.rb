@@ -23,12 +23,13 @@ RSpec.describe Response, type: :model do
 
       actual_count = Response.all.count
       actual = Response.all_responses
-      expect(actual.count).to eq(actual.count)
+      expect(actual.count).to eq(actual_count)
       expect(actual[0].question_id).to eq(response1.question_id)
       expect(actual[0].course_id).to eq(response1.course_id)
       expect(actual[0].answer_type).to eq("id")
-      expect(actual[0].student_id).to eq("2")
+      expect(actual[0].student_id).to eq("1")
     end
+
     it 'can get .answer_query' do
       category1 = Category.create(category:"daily")
       category2 = Category.create(category:"grade")
@@ -70,7 +71,7 @@ RSpec.describe Response, type: :model do
       expect(actual[0].question_id).to eq(response1.question_id)
       expect(actual[0].course_id).to eq(response1.course_id)
       expect(actual[0].answer_type).to eq("id")
-      expect(actual[0].student_id).to eq("2")
+      expect(actual[0].student_id).to eq("1")
     end
   end
 end
