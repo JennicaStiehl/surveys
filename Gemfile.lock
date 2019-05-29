@@ -28,6 +28,7 @@ GEM
       xpath (~> 3.0)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
+    csv (3.1.1)
     database_cleaner (1.7.0)
     diff-lcs (1.3)
     fast_jsonapi (1.5)
@@ -117,6 +118,7 @@ DEPENDENCIES
   active_record_union
   activerecord
   capybara (~> 3.0.3)
+  csv
   database_cleaner
   fast_jsonapi
   figaro
