@@ -28,7 +28,8 @@ responses = CSV.open('./db/data/responses.csv', options_hash)
 
 responses.each do |row|
   hash = row.to_hash
-  creation = hash.delete(:days_ago).days.ago
+
+  creation = hash.delete(:days_ago).days.ago.to_datetime
 
   Response.create(
     **hash, created_at: creation, updated_at: creation
