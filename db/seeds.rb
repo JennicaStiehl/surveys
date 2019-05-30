@@ -35,3 +35,5 @@ responses.each do |row|
     **hash, created_at: creation, updated_at: creation
   )
 end
+
+require 'pry'; binding.pry
