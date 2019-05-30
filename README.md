@@ -14,7 +14,6 @@ ActiveRecord
 Postgresql
 Fast JSON API
 ```
-
 ## Getting Started/Requirements/Prerequisites/Dependencies
 ```
 run the following commands:
@@ -78,4 +77,10 @@ select * from responses inner join choices on responses.choice_id = choices.id i
 select * from responses inner join choices on responses.choice_id = choices.id;
 
 select * from categories inner join questions on categories.id = questions.category_id;
+```
+### New seed data
+```
+heroku restart
+heroku pg:reset DATABASE
+heroku run rake db:{migrate,seed}
 ```

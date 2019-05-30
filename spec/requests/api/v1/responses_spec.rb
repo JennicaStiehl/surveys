@@ -29,7 +29,7 @@ describe "API response calls" do
     question1 = category1.questions.create(question: "Math Test", category_id: category1.id, created_at: "2019-05-23 13:31:38 UTC", updated_at: "2019-05-23 13:31:38 UTC")
     response1 = Response.create(question_id: question1.id, answer_type: "text", text_answer: "79", student_id: 1, course_id: 2)
     response2 = Response.create(question_id: question1.id, answer_type: "text", text_answer: "89", student_id: 2, course_id: 2)
-
+binding.pry
     get '/api/v1/answers'
 
     expect(last_response).to be_successful
