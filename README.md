@@ -1,4 +1,4 @@
-# Project Name: Surveys
+# Surveys
 ## Description
 ```
 Surveys is a stand alone Sinatra application built in the spirit of Service Oriented Architecture (SOA).
@@ -23,13 +23,19 @@ bundle exec figaro install
 bundle exec rake db:{create,migrate,seed}
 RACK_ENV=test rake db:migrate
 ```
-## Local Host
-in your CLI:
-```bundle exec shotgun```
-in your browser:
-```http://localhost:9393```
-```https://aqueous-caverns-33840.herokuapp.com/```
-
+## Locations/Where to Find the applications
+### Here To Learn
+```development: localhost:3000
+production: https://young-anchorage-86985.herokuapp.com
+```
+### Surveys
+```development: localhost:9393
+production: https://aqueous-caverns-33840.herokuapp.com
+```
+### Machine Learning Microservice
+```development: localhost:8000
+production: http://lit-fortress-28598.herokuapp.com/
+```
 ## API Endpoints
 ```
 get '/api/v1/questions'
@@ -52,13 +58,6 @@ Code Style/Requirements
 Format for commit messages
 Thank you (name contributors)
 ```
-## TODO
-```
-Next steps
-Features planned
-Known bugs (shortlist)
-```
-
 ## Resources
 ```
 Project Guidelines: http://backend.turing.io/module3/projects/terrificus

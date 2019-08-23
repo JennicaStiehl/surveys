@@ -10,6 +10,7 @@ gem 'fast_jsonapi'
 gem 'active_record_union'
 gem 'figaro'
 gem 'csv'
+gem 'nokogiri', '>=1.10.4'
 
 group :development, :test do
   gem 'capybara', '~> 3.0.3'
